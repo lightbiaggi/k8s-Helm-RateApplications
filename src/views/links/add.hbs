@@ -1,0 +1,40 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <h1 class="text-light mb-3 h4">add new review</h1>
+                    <form action="/links/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control bg-dark text-light" placeholder="Title"
+                                autofocus>
+                        </div>
+                        <div class="form-group">
+                            <select class="selectpicker" name="url" data-style="btn-info" name="url" aria-placeholder="URL">
+                                <optgroup label="Select Table">
+                                    <option name="app1" value="app1.xxxx.io">app1</option>
+                                    <option name="app2" value="app2.xxxx.io">app2</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="ratings" class="form-control bg-dark text-light" placeholder="ratings"
+                                autofocus>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="comments" rows="2" class="form-control bg-dark text-light"
+                                placeholder="comments"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
