@@ -1,15 +1,21 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "api-deploy.fullname" . }}
+  name: api-service
   labels:
-    {{- include "api-deploy.labels" . | nindent 4 }}
+    app.kubernetes.io/name: node-express-api
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Values.image.tag }}
+    app.kubernetes.io/component: node-express-api
+    app.kubernetes.io/part-of: node-express-api
+    app.kubernetes.io/managed-by: helm3
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: 3000
       protocol: TCP
       name: http
   selector:
-    {{- include "api-deploy.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/name: node-express-api
+    app.kubernetes.io/instance: {{ .Release.Name }}
