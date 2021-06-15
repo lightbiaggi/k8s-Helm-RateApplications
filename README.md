@@ -10,7 +10,7 @@ App is a Multi Page Application using Nodejs and Mysql. The purpose of this web 
 ![home page ](docs/app_home.png) this is the first page
 ![signup page](docs/signup.png) this is the signup page
 ![profile page](docs/homescreen.png) this is the first page
-![add review](docs/addreview.png) this is an add a review page
+![add review](docs/add review.png.png) this is an add a review page
 ![first review](docs/first_review.png) review example
 
 ## Installation
