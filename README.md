@@ -10,7 +10,7 @@ App is a Multi Page Application using Nodejs and Mysql. The purpose of this web 
 ![home page ](docs/app_home.png) this is the first page
 ![signup page](docs/signup.png) this is the signup page
 ![profile page](docs/homescreen.png) this is the first page
-![add review](docs/add review.png.png) this is an add a review page
+![add_review](docs/addreview.png) this is an add a review page
 ![first review](docs/first_review.png) review example
 
 ## Installation
@@ -47,6 +47,23 @@ COPY . .
 EXPOSE 3000
 
 CMD [ "npm", "run", "start" ]
+```
+[noise_aware_react-docker-repo](https://hub.docker.com/repository/docker/lightleobiaggi//marvel-app) 
+- tardisdriver/marvel-app
+```
+FROM node:14
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "npm", "run", "build" ]
 ```
 [noise_aware_react-docker-repo](https://hub.docker.com/repository/docker/lightleobiaggi/noise_aware_react) 
 # kubernetes
