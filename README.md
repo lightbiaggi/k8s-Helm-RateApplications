@@ -24,11 +24,31 @@ npm start
 
 ## dockerized public image in repo
 the image is build can can be found at 
-[rate-app-repo](https://hub.docker.com/repository/docker/lightleobiaggi/node-express-api) 
+[rate-app-docker-repo](https://hub.docker.com/repository/docker/lightleobiaggi/node-express-api) 
 
 screenshot of building the image which will be used in the charts
 
 ![docker image](docs/image_pushed_to_repo.png)
+
+
+# dockerized implementations
+- DzrtFox/noise_aware_react
+```
+FROM node:14
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "start" ]
+```
+[noise_aware_react-docker-repo](https://hub.docker.com/repository/docker/lightleobiaggi/noise_aware_react) 
 # kubernetes
 for kuberneted I initialize it with following
 - 2 pods for application
@@ -45,7 +65,6 @@ screenshots
 ## Future improvements
 
 1. [ ] Use Tidb cluster for HA and resiliency instead of current mysql [TiDB Operator](https://github.com/pingcap/tidb-operator) 
-1. [ ] fimprove loadbalancing and retrial logic (wish had time to do that)
 1. [ ] Add Prometheus monitoring to deployment for sla/slo
 1. [ ] user cannot add more than one review per app
 1. [ ] List of app saved in db and populated dynamically with more validation
