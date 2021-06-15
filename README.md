@@ -1,18 +1,45 @@
-# Notes App with Nodejs and Mysql
+# Application
 
-Notes App is a Multi Page Application using Nodejs and Mysql. The purpose of this web application is just to be an example for beginners.
+App is a Multi Page Application using Nodejs and Mysql. The purpose of this web application to provide rating for apps for used to evalute the applications and provide feed backs and comments
+ 
+ to use this app you need to signup then add the feedbacks for each links
 
-![](docs/screenshot2.png)
-![](docs/screenshot.png)
+ below are screenshots of the the app
 
-### Installation
+
+![home page ](docs/app_home.png) this is the first page
+![signup page](docs/signup.png) this is the signup page
+![profile page](docs/homescreen.png) this is the first page
+![add review](docs/addreview.png) this is an add a review page
+![first review](docs/first_review.png) review example
+
+## Installation
 ```
+the application can be run locally use the folo
 mysql -u MYUSR "-pMYPASSWORD" < ./database/db.sql # create database
 npm i
 npm run build
 npm start
 ```
 
+## dockerized public image in repo
+the image is build can can be found at 
+[rate-app-repo](https://hub.docker.com/repository/docker/lightleobiaggi/node-express-api) 
+
+screenshot of building the image which will be used in the charts
+
+![docker image](docs/image_pushed_to_repo.png)
+# kubernetes
+for kuberneted I initialize it with following
+- 2 pods for application
+- ingress(had issues with it no time to debug)
+- MySQL database from helm chart with init scripts and secrets bootstrapped
+
+screenshots
+- ![show deployments](docs/deployment.png)
+- ![show db setup](docs/db_init.png) database bootstrapped with init script and dbs
+- ![show db container](docs/db_container.png) database bootstrapped with init script and dbs
+- ![show db screts](docs/secrets.png) secrets added for db
 ## File Structure
 
 - database, it the folder with all the sql queries, you can use to recreate the database for this application
