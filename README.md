@@ -45,7 +45,7 @@ screenshots
 ## Future improvements
 
 1. [ ] Use Tidb cluster for HA and resiliency instead of current mysql [TiDB Operator](https://github.com/pingcap/tidb-operator) 
-1. [ ] fix loadbalancing and ingress
+1. [ ] fimprove loadbalancing and retrial logic (wish had time to do that)
 1. [ ] Add Prometheus monitoring to deployment for sla/slo
 1. [ ] user cannot add more than one review per app
 1. [ ] List of app saved in db and populated dynamically with more validation
