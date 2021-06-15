@@ -15,7 +15,7 @@ App is a Multi Page Application using Nodejs and Mysql. The purpose of this web 
 
 ## Installation
 ```
-the application can be run locally use the folo
+the application can be run locally use the following
 mysql -u MYUSR "-pMYPASSWORD" < ./database/db.sql # create database
 npm i
 npm run build
