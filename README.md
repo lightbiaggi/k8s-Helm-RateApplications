@@ -44,7 +44,7 @@ screenshots
 
 ## Future improvements
 
-1. [ ] Use Tidb cluster for HA and resiliency finstead of current mysql [TiDB Operator](https://github.com/pingcap/tidb-operator) 
+1. [ ] Use Tidb cluster for HA and resiliency instead of current mysql [TiDB Operator](https://github.com/pingcap/tidb-operator) 
 1. [ ] fix loadbalancing and ingress
 1. [ ] Add Prometheus monitoring to deployment for sla/slo
 1. [ ] user cannot add more than one review per app
