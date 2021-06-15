@@ -40,26 +40,15 @@ screenshots
 - ![show db setup](docs/db_init.png) database bootstrapped with init script and dbs
 - ![show db container](docs/db_container.png) database bootstrapped with init script and dbs
 - ![show db screts](docs/secrets.png) secrets added for db
-## File Structure
-
-- database, it the folder with all the sql queries, you can use to recreate the database for this application
-- src, it's all the code for the Backend and Frontend Application
-- docs
-
-## Environment Variables
-
-- PORT
-
-## Old Versions of this Project
 
 
-## Todo
+## Future improvements
 
-1. [x] Improve Links Routes
-1. [ ] Write Route Validation with Express Validator
-1. [ ] Add docker compose production build
-1. [ ] Allows users to signup with email and no username
-1. [ ] Add nodemailer for transactional emails
+1. [ ] Use Tidb cluster for HA and resiliency finstead of current mysql [TiDB Operator](https://github.com/pingcap/tidb-operator) 
+1. [ ] fix loadbalancing and ingress
+1. [ ] user cannot add more than one review per app
+1. [ ] List of app saved in db and populated dynamically with more validation
+1. [ ] Add rating star view instead of numberic
 
 ## Tools
 
@@ -67,4 +56,8 @@ screenshots
 - Mysql
 - Babel
 - Docker
+- helm3
+- kubectl
+- minikube
+
 
