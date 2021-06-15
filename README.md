@@ -57,8 +57,8 @@ screenshots
 - Mysql
 - Babel
 - Docker
-- helm3
-- kubectl
-- minikube
+- Helm3
+- Kubectl
+- Minikube
 
 
