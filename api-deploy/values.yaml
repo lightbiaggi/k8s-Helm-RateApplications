@@ -5,8 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
 
@@ -80,3 +79,30 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+# mysql
+mysql:
+  mysqlDatabase: dblinks
+  mysqlUser: lbiaggi
+  existingSecret: api-db-pass
+  initializationFiles:
+    1-create-table-users.sql: |-
+      CREATE TABLE users (
+        id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        username VARCHAR(16) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        password VARCHAR(60) NOT NULL,
+        fullname VARCHAR(100) NOT NULL,
+        createdOn TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+    2-add-dummy-users.sql: |-
+      INSERT INTO users (id, username,email, password, fullname) VALUES (1, 'john', 'john@email.com',  'password1', 'John Carter');
+    3-create-table-links.sql: |-
+      CREATE TABLE links (
+        id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        title VARCHAR(150) NOT NULL,
+        url VARCHAR(255) NOT NULL,
+        ratings INT(1),
+        comments TEXT,
+        user_id INT(11),
+        created_at timestamp NOT NULL DEFAULT current_timestamp,
+        CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id));
+      
